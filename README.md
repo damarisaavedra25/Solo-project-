@@ -2,6 +2,7 @@
   <h1>Solo Project: MayoTheCat 😺</h1>
   <p>An interactive web application created to celebrate Mayo (my cat), the influencer cat (kinda famous).</p>
   <p>I wanted to create something fun and express my love for animals, what better than creating website for my cat?</p>
+  <p>The website has spanish & english translation, make sure you select your language at top right corner</p>
 </div>
 
 ***
