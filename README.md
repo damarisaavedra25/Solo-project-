@@ -1,27 +1,42 @@
-# Getting Started 
+<div align="center">
+  <h1>Solo Project: MayoTheCat 😺</h1>
+  <p>An interactive web application created to celebrate Mayo (my cat), the influencer cat (kinda famous).</p>
+  <p>I wanted to create something fun and express my love for animals, what better than creating website for my cat?</p>
+</div>
 
-This project was created with JS & React
+***
 
-## Must have installed
-If you want to run this app locally, must have installed **Node.js** to manage dependencies
+## 🛠️ Prerequisites
 
-## Tested in
-Macbook Pro 13inch, M2
-Google Chrome Version 149.0.7827.10
+To run this application locally, ensure you have the following installed:
 
-In the project directory, you can run:
+*   **Node.js**: A recent LTS version is recommended. Download it here:
 
-### `npm start`
+    <a href="https://nodejs.org/" target="_blank">
+      <img src="https://img.shields.io/badge/Node.js-LTS-green?style=for-the-badge&logo=node.js" alt="Install Node.js">
+    </a>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+*   **Dependencies**: Install the necessary packages by running the following command in your terminal:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    `npm install`
 
+***
 
-### Deployment
+## 💻 Tested Environment
 
-The app has been deployed to vercel, see the following link https://solo-project-chi.vercel.app
+This application has been verified in the following environment: to avoid any discrepancies try to view it in 1268x2255 px
 
+*   **Device**: MacBook Pro, 13-inch, M2 Chip
+*   **Browser**: Google Chrome, Version 149.0.7827.10
 
+***
+
+## 🚀 Running Locally
+
+To start the application in development mode, run:
+
+```bash
+npm start
+
+## Vercel view
+To view the app in vercel use the following link  https://solo-project-chi.vercel.app/
