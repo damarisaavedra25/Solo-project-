@@ -3,7 +3,7 @@
 This project was created with JS & React
 
 ## Must have installed
-Must have installed **Node.js** to manage dependencies
+If you want to run this app locally, must have installed **Node.js** to manage dependencies
 
 ## Tested in
 Macbook Pro 13inch, M2
@@ -22,6 +22,6 @@ You may also see any lint errors in the console.
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+The app has been deployed to vercel, see the following link https://solo-project-chi.vercel.app
 
 
