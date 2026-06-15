@@ -528,16 +528,12 @@ function App() {
           rootElement={document.getElementById('root')}
         />
       </div>
-    <div style={{ position: 'fixed', bottom: '20px', right: '20px', zIndex: 1000 }}>
-  <iframe 
-    width="150" 
-    height="30" 
-    src="https://www.youtube.com/embed/6iDuLGZt6Wo?autoplay=1&loop=1&playlist=6iDuLGZt6Wo" 
-    title="Reproductor de música" 
-    frameBorder="0" 
-    allow="autoplay; encrypted-media" 
-    allowFullScreen>
-  </iframe>
+     <div className="music-player-container">
+  <iframe
+    className="music-player-iframe"
+    src="https://www.youtube.com/embed/6iDuLGZt6Wo?autoplay=1&loop=1&playlist=6iDuLGZt6Wo"
+    allowFullScreen
+  />
 </div>
     </Router>
   );

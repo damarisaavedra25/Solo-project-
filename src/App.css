@@ -13,21 +13,24 @@ body {
 .App {
     /* 1. La imagen de las patitas con un filtro de opacidad */
     /* 2. El degradado que ya tenías */
-  /* Intenta quitar la barra inicial para que busque relativo a la carpeta de compilación */
+    /* Intenta quitar la barra inicial para que busque relativo a la carpeta de compilación */
     background-image: url('../public/img/patitas.png');
-    
+
     /* Configuración para que las patitas se repitan */
     background-repeat: repeat;
-    background-size: 150px; /* Ajusta este tamaño a tu gusto */
+    background-size: 150px;
+    /* Ajusta este tamaño a tu gusto */
     background-attachment: fixed;
     min-height: 100vh;
 }
+
 /* --- NAVEGACIÓN MODERNA (Glassmorphism) --- */
 /* 1. Cambia el flex del nav para que no empuje todo */
 nav {
     /* ... mantén todo lo que ya tienes ... */
     display: flex;
-    justify-content: flex-start; /* Logo a la izquierda */
+    justify-content: flex-start;
+    /* Logo a la izquierda */
     align-items: center;
     padding: 5px 20px;
     background-color: #010D2F;
@@ -37,8 +40,10 @@ nav {
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center; /* Centra el texto */
-    flex-grow: 1;            /* Ocupa todo el espacio disponible */
+    justify-content: center;
+    /* Centra el texto */
+    flex-grow: 1;
+    /* Ocupa todo el espacio disponible */
     gap: 25px;
     margin: 0;
     padding: 0;
@@ -64,7 +69,8 @@ nav ul li a.active {
 .nav-lang-item {
     display: flex !important;
     align-items: center !important;
-    gap: 15px !important; /* Espacio entre los botones y Mayo */
+    gap: 15px !important;
+    /* Espacio entre los botones y Mayo */
 }
 
 .mayo-saludador-nav {
@@ -85,11 +91,27 @@ nav ul li a.active {
 }
 
 @keyframes asomarse {
-    0%, 100% { transform: rotate(0deg); }
-    20% { transform: rotate(15deg); }
-    40% { transform: rotate(-10deg); }
-    60% { transform: rotate(5deg); }
-    80% { transform: rotate(0deg); }
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    20% {
+        transform: rotate(15deg);
+    }
+
+    40% {
+        transform: rotate(-10deg);
+    }
+
+    60% {
+        transform: rotate(5deg);
+    }
+
+    80% {
+        transform: rotate(0deg);
+    }
 }
 
 .language-picker-capsule {
@@ -164,11 +186,12 @@ h2 {
     display: grid;
     grid-template-columns: 1fr;
     /* La primera fila es el hero, la segunda es donde comienza la historia */
-    grid-template-rows: auto auto; 
+    grid-template-rows: auto auto;
 }
 
 .hero-container {
-    padding-bottom: 100px; /* Espacio extra para que el contenido no se pierda bajo el traslape */
+    padding-bottom: 100px;
+    /* Espacio extra para que el contenido no se pierda bajo el traslape */
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -176,12 +199,13 @@ h2 {
 }
 
 .hero-content {
-    display: flex; 
-    flex-direction: row; 
-    align-items: center; 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     justify-content: space-between;
     width: 100%;
-    margin-bottom: 80px; /* Esto separa el Hero de lo que pongas abajo */
+    margin-bottom: 80px;
+    /* Esto separa el Hero de lo que pongas abajo */
     gap: 40px;
 }
 
@@ -190,7 +214,8 @@ h2 {
 }
 
 .hero-right {
-    flex: 1; /* Permite que la imagen tome el espacio restante */
+    flex: 1;
+    /* Permite que la imagen tome el espacio restante */
     display: flex;
     justify-content: center;
 }
@@ -419,7 +444,8 @@ h2 {
 .home-gallery-title {
     text-align: center;
     margin-bottom: 5px;
-    color: #f3f4f6; /* Asegura contraste */
+    color: #f3f4f6;
+    /* Asegura contraste */
     font-size: 2rem;
 }
 
@@ -866,46 +892,145 @@ h2 {
 }
 
 /* --- RESPONSIVIDAD MEDIA QUERIES --- */
-@media (max-width: 768px) {
+@media(max-width: 768px) {
+    .galeria-home {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        /* Espacio entre imágenes */
+    }
+
+    /* Hacer las imágenes responsivas */
+    .home-gallery-section {
+        width: 90%;
+        /* Ocupa la mayor parte del ancho */
+        height: auto;
+        /* La altura se ajusta automáticamente */
+        max-width: 90%;
+    }
+
+    /* La sección hero y contenido en columna y centrado */
     .hero-content {
-        flex-direction: column-reverse;
-    }
-}
-
-    .hero-description {
-        margin: 0 auto 35px auto;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
+    /* Tamaños de títulos y textos */
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    /* Botones en columna y centrados */
     .hero-buttons {
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
     }
 
-    .hero-title {
-        font-size: 3rem;
-    }
-
-    .hero-name {
-        font-size: 3.8rem;
-    }
-
-    /* Centrar el botón de enviar formulario y darle un tamaño estilizado */
-    .form-actions {
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
+    /* Imágenes de productos y galería más anchas y en columna */
+    .product-image,
+    .galeria-especial img {
         width: 100%;
+        max-width: 100%;
+        height: auto;
     }
+
+    /* La galería en columna */
+    .galeria-especial {
+        flex-direction: column;
+    }
+
+    /* Contenedor de secciones con menos margen y padding */
+    .main-section-box {
+        padding: 20px;
+        margin: 20px 10px;
+    }
+
+    /* Navegación en columna y centrada */
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+        padding: 0;
+    }
+
+    /* Logo más pequeño */
+    .nav-logo img {
+        height: 60px;
+        margin-bottom: 10px;
+    }
+
+    .historia-integrada {
+        padding: 20px;
+        margin: 0 auto;
+        max-width: 100%;
+        background-color: #001f3f;
+        /* si quieres mantener el color original */
+        border-radius: 10px;
+        box-sizing: border-box;
+    }
+
+    /* Para los contenidos internos */
+    .historia-card-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        /* separación entre tarjetas */
+    }
+
+    /* Para las imágenes dentro de historia */
+    .historia-images img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    /* Para el contenido de las tarjetas */
+    .historia-card-content {
+        padding: 15px;
+        font-size: 1.2rem;
+        line-height: 1.5;
+    }
+
+    .main-content {
+        max-width: 1200px;
+        /* o el ancho que prefieras */
+        margin: 0 auto;
+        /* centra horizontalmente */
+    }
+
+    .main-section-box {
+        margin: 0 auto !important;
+        max-width: 600px !important;
+        width: 90% !important;
+    }
+
+    select.product-select {
+    font-size: 1.2em; /* Aumenta tamaño de fuente en el desplegable */
+  }
+}
 
 /* --- CSS DE EMERGENCIA: SOLO MOSTRAR IMAGEN --- */
 .gato-asomadizo {
     position: fixed !important;
-    bottom: 0px !important; /* Visible fijo */
+    bottom: 0px !important;
+    /* Visible fijo */
     right: 40px !important;
     z-index: 999999 !important;
     width: 150px !important;
     height: 150px !important;
     display: block !important;
-    border: 3px solid white !important; /* Borde blanco para identificarla rápido */
+    border: 3px solid white !important;
+    /* Borde blanco para identificarla rápido */
 }
 
 .mayo-popup-img {
@@ -918,9 +1043,12 @@ h2 {
 /* --- POSICIÓN FIJA (Línea amarilla) --- */
 .mayo-saludador {
     position: fixed;
-    top: 20px;       /* Ajusta este valor para bajar/subir la altura */
-    right: 20px;     /* Ajusta este valor para mover hacia el centro o borde */
-    z-index: 2000;   /* Por encima de la navegación */
+    top: 20px;
+    /* Ajusta este valor para bajar/subir la altura */
+    right: 20px;
+    /* Ajusta este valor para mover hacia el centro o borde */
+    z-index: 2000;
+    /* Por encima de la navegación */
     width: 120px;
     height: 120px;
 }
@@ -934,80 +1062,103 @@ h2 {
     object-fit: cover;
     /* La animación ocurre cada 4 segundos */
     animation: asomarse 4s ease-in-out infinite;
-    transform-origin: bottom center; /* Gira sobre la base */
+    transform-origin: bottom center;
+    /* Gira sobre la base */
 }
 
 /* La animación: se inclina a la derecha y regresa */
 @keyframes asomarse {
-    0%, 100% { transform: rotate(0deg); }
-    20% { transform: rotate(15deg); }
-    40% { transform: rotate(-10deg); }
-    60% { transform: rotate(5deg); }
-    80% { transform: rotate(0deg); }
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    20% {
+        transform: rotate(15deg);
+    }
+
+    40% {
+        transform: rotate(-10deg);
+    }
+
+    60% {
+        transform: rotate(5deg);
+    }
+
+    80% {
+        transform: rotate(0deg);
+    }
 }
 
 .page-section {
-    padding-top: 80px; /* Ajusta según la altura de tu menú */
+    padding-top: 80px;
+    /* Ajusta según la altura de tu menú */
     min-height: 80vh;
 }
+
 /* Contenedor principal de la prueba social */
 .social-proof-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  /* CAMBIA ESTA LÍNEA: Aumenta el primer valor para bajar el bloque */
-  margin-top: 40px; 
-  margin-bottom: 10px;
-  width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* CAMBIA ESTA LÍNEA: Aumenta el primer valor para bajar el bloque */
+    margin-top: 40px;
+    margin-bottom: 10px;
+    width: 100%;
 }
 
 /* Grupo de avatares encimados */
 .social-avatars {
-  display: flex;
+    display: flex;
 }
 
 .social-avatars img {
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  border: 2px solid #030712; 
-  margin-left: -12px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 2px solid #030712;
+    margin-left: -12px;
 }
 
 .social-avatars img:first-child {
-  margin-left: 0; 
+    margin-left: 0;
 }
 
 /* Bloque de texto */
 .social-labels {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.2;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
 }
 
 .followers-bold {
-  font-weight: 700;
-  color: #ffffff;
-  font-size: 0.95rem;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 0.95rem;
 }
 
 .thanks-text {
-  font-size: 0.85rem;
-  color: #a0aec0; /* El color gris azulado del diseño */
+    font-size: 0.85rem;
+    color: #a0aec0;
+    /* El color gris azulado del diseño */
 }
 
 .nav-seguidores {
     display: inline-flex;
     align-items: center;
-    background: rgba(255, 255, 255, 0.05); /* Fondo suave */
+    background: rgba(255, 255, 255, 0.05);
+    /* Fondo suave */
     padding: 6px 16px;
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    color: #ffffff !important; 
+    color: #ffffff !important;
     font-weight: 600;
     font-size: 0.9rem;
-    cursor: default !important; /* ¡IMPORTANTE! Esto quita el efecto de clic */
-    transition: none !important; /* Quitamos cualquier animación de botón */
+    cursor: default !important;
+    /* ¡IMPORTANTE! Esto quita el efecto de clic */
+    transition: none !important;
+    /* Quitamos cualquier animación de botón */
 }
 
 /* Forzamos que no reaccione al hover */
@@ -1016,15 +1167,18 @@ h2 {
     color: #ffffff !important;
     text-shadow: none !important;
 }
+
 .nav-logo {
-    margin-right: auto; /* Empuja el menú de navegación a la derecha */
+    margin-right: auto;
+    /* Empuja el menú de navegación a la derecha */
 }
+
 /* Contenedor del logo */
 .nav-logo img {
-    height: 80px; 
+    height: 80px;
     width: auto;
-    margin-left: 20px; 
-  
+    margin-left: 20px;
+
 }
 
 
@@ -1034,7 +1188,8 @@ nav ul {
     align-items: center;
     gap: 20px;
     margin: 0;
-    padding-right: 20px; /* Separación del borde derecho */
+    padding-right: 20px;
+    /* Separación del borde derecho */
 }
 
 /* Contenedor del texto */
@@ -1047,9 +1202,11 @@ nav ul {
 
 .historia-card-container {
     display: flex;
-    max-width: 1100px; /* Alarga el bloque hacia los lados */
+    max-width: 1100px;
+    /* Alarga el bloque hacia los lados */
     width: 95%;
-    margin: -150px auto 40px auto; /* Sube el bloque sobre el hero */
+    margin: -150px auto 40px auto;
+    /* Sube el bloque sobre el hero */
     padding: 40px;
     background: rgba(15, 23, 42, 0.8);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -1063,7 +1220,8 @@ nav ul {
 /* Ajustamos el tamaño de las imágenes dentro de la tarjeta */
 .historia-images img {
     width: 30%;
-    height: 300px; /* Aumentado a 300px para que sean más grandes */
+    height: 300px;
+    /* Aumentado a 300px para que sean más grandes */
     object-fit: cover;
     border-radius: 15px;
 }
@@ -1075,8 +1233,15 @@ nav ul {
     border-radius: 24px;
     backdrop-filter: blur(12px);
     padding: 40px;
-    margin: 40px auto; /* Esto separa las secciones entre sí */
+    margin: 40px auto;
+    /* Esto separa las secciones entre sí */
     max-width: 1100px;
     width: 95%;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.music-player-iframe {
+    float:right;
+  width: 350px;
+  height: 150px; /* ajusta la altura proporcionalmente */
 }
