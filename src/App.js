@@ -168,7 +168,7 @@ function App() {
 
                       <div className="social-proof-wrapper">
                         <div className="social-avatars">
-                          <img src="/img/Portrait1.jpeg" alt="User" />
+                          <img src="/img/portrait1.jpeg" alt="User" />
                           <img src="/img/portrait2.jpg" alt="User" />
                           <img src="/img/portrait3.jpeg" alt="User" />
                         </div>
