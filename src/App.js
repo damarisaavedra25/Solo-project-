@@ -529,9 +529,10 @@ function App() {
         />
       </div>
      <div className="music-player-container">
-  <iframe
+ <iframe
     className="music-player-iframe"
     src="https://www.youtube.com/embed/6iDuLGZt6Wo?autoplay=1&loop=1&playlist=6iDuLGZt6Wo"
+    title="Mayo Music Player"
     allowFullScreen
   />
 </div>
