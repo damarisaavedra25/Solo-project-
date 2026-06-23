@@ -7,6 +7,26 @@
 
 ***
 
+## 📖 Overview
+
+This app was created for Chingu Voyage 62 solo-project
+
+## ⚙️ Features
+
+**State Management**: I handled component state using React Hooks to manage user interactions, like the product image rotator, a greeting counter that says “Meeow “ to the user and the inputs in the contact form
+
+**Order Processing**: I coded the shop’s workflow from scratch. Users can pick models, colors and sizes, I customize it to the available options for women & men. And the app generates a unique folio ID
+
+**Receipt System**: Once an order is placed, the app renders a receipt with the order details, bank info, and instructions on what to do next
+
+**Responsive Layout**: Compatible with both mobile and web
+
+**Booking**: I added a booking feature in the “Asesorias” section that allows the user top pick a time directly from my Calendly so they can schedule a 1-on-1 session with me
+
+**Contact form**: User is available to message directly to my email, so it’s easy for people to reach out about an order
+
+**Bilingual Support**: The app is available in two languages, and the user can switch between English and Spanish
+
 ## 🛠️ Prerequisites
 
 To run this application locally, ensure you have the following installed:
