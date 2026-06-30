@@ -8,10 +8,7 @@ function CatGallery() {
   if (error) return <p>Error: {error}</p>;
 
   return (
-    <div 
-      className="cat-gallery"
-      style={{ cursor: "url('/img/paws.png') 16 16, auto" }} // cursor desde public/img
-    >
+    <div className="cat-gallery">
       {cats.map((cat) => (
         <img key={cat.id} src={cat.url} alt="Gato" />
       ))}
