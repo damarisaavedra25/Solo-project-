@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-do
 import './App.css';
 import { traducciones } from './traducciones';
 import { PopupModal } from 'react-calendly';
+import CatGallery from "./components/CatGallery";
 
 // IMPORTACIÓN DE PÁGINAS Y DATA EXTERNA
 import Home from './pages/Home';
@@ -97,7 +98,9 @@ function App() {
             <li><NavLink to="/tienda">Mayo's Shop{traduccion.navMayosshop}</NavLink></li>
             <li><NavLink to="/asesorias">{traduccion.navAsesorias}</NavLink></li>
             <li><NavLink to="/contacto">{traduccion.navContacto}</NavLink></li>
+           <li><NavLink to="/gatos">{traduccion.navGatos}</NavLink></li>
             <li className="nav-seguidores">⭐ {traduccion.seguidores}</li>
+
             <li className="nav-lang-item">
               <div className="language-picker-capsule">
                 <button onClick={() => setIdioma('es')} className={`lang-btn ${idioma === 'es' ? 'active-lang' : ''}`}>ES</button>
@@ -114,6 +117,7 @@ function App() {
             <Route path="/about" element={<About traduccion={traduccion} />} />
             <Route path="/dieta" element={<Dieta traduccion={traduccion} />} />
             <Route path="/asesorias" element={<Asesorias traduccion={traduccion} setCalendarioAbierto={setCalendarioAbierto} />} />
+            <Route path="/gatos" element={<CatGallery traduccion={traduccion} />} />
             <Route path="/tienda" element={
               <Tienda 
                 idioma={idioma} traduccion={traduccion} ordenCompletada={ordenCompletada} 
@@ -140,9 +144,6 @@ function App() {
           open={calendarioAbierto}
           rootElement={document.getElementById('root')}
         />
-      </div>
-      <div className="music-player-container">
-        <iframe className="music-player-iframe" src="https://www.youtube.com/embed/6iDuLGZt6Wo?autoplay=1&loop=1&playlist=6iDuLGZt6Wo" title="Mayo Music Player" allowFullScreen />
       </div>
     </Router>
   );

@@ -72,7 +72,8 @@ export const traducciones = {
     moodDesc: "Siesta Profesional",
     seguidores: "60,000mil seguidores",
     agradecimiento: "Gracias por tanto amor 💙",
-    reciboTalla: "Talla"
+    reciboTalla: "Talla",
+    navGatos: "Galería de Gatos"
   },
   en: {
     navHome: "Home",
@@ -146,6 +147,7 @@ export const traducciones = {
     moodDesc: "Professional Nap",
     seguidores: "60k followers",
     agradecimiento: "Thanks for so much love 💙",
-    reciboTalla: "Size"
+    reciboTalla: "Size",
+    navGatos: "Cat Gallery"
   }
 };
