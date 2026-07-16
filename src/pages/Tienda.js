@@ -1,12 +1,15 @@
 import React from 'react';
 import { fotosClasica, fotosMiau } from '../data';
+import { useTienda } from '../hooks/useTienda';
 
-function Tienda({ 
-  idioma, traduccion: t, ordenCompletada, setOrdenCompletada, procesarOrden,
-  colorClasica, setColorClasica, tallaClasica, setTallaClasica,
-  colorMiauSel, setColorMiauSel, tallaMiauSel, setTallaMiauSel,
-  indiceClasica, rotarClasica, indiceMiau, rotarMiau 
-}) {
+function Tienda({ idioma, traduccion: t }) {
+  const { 
+    ordenCompletada, setOrdenCompletada, procesarOrden,
+    colorClasica, setColorClasica, tallaClasica, setTallaClasica,
+    colorMiauSel, setColorMiauSel, tallaMiauSel, setTallaMiauSel,
+    indiceClasica, rotarClasica, indiceMiau, rotarMiau,
+    cargando 
+  } = useTienda();
 
   const productStyle = "bg-slate-900/50 backdrop-blur-lg border border-white/10 rounded-3xl p-6 shadow-xl w-full max-w-[320px]";
   const selectStyle = "w-full p-3 mt-2 rounded-xl bg-slate-950 border border-white/10 text-white focus:border-cyan-400 outline-none";
@@ -45,8 +48,12 @@ function Tienda({
               {['S','M','L','XL'].map(s => <option key={s} value={s}>{s}</option>)}
             </select>
 
-            <button onClick={() => procesarOrden('Camisa Caballero', 500, tallaClasica, colorClasica)} className="w-full mt-6 py-3 bg-gradient-to-r from-cyan-400 to-blue-500 text-slate-950 font-bold rounded-xl hover:scale-[1.02] transition-transform">
-              📋 {idioma === 'es' ? 'Generar Orden' : 'Place Order'}
+            <button 
+              disabled={cargando}
+              onClick={() => procesarOrden('Camisa Caballero', 500, tallaClasica, colorClasica)} 
+              className={`w-full mt-6 py-3 bg-gradient-to-r from-cyan-400 to-blue-500 text-slate-950 font-bold rounded-xl transition-transform ${cargando ? 'opacity-50 cursor-not-allowed' : 'hover:scale-[1.02]'}`}
+            >
+              {cargando ? "..." : `📋 ${idioma === 'es' ? 'Generar Orden' : 'Place Order'}`}
             </button>
           </div>
         </div>
@@ -71,14 +78,18 @@ function Tienda({
               {['S','M','L','XL'].map(s => <option key={s} value={s}>{s}</option>)}
             </select>
 
-            <button onClick={() => procesarOrden('Camisa Dama', 500, tallaMiauSel, colorMiauSel)} className="w-full mt-6 py-3 bg-gradient-to-r from-cyan-400 to-blue-500 text-slate-950 font-bold rounded-xl hover:scale-[1.02] transition-transform">
-              📋 {idioma === 'es' ? 'Generar Orden' : 'Place Order'}
+            <button 
+              disabled={cargando}
+              onClick={() => procesarOrden('Camisa Dama', 500, tallaMiauSel, colorMiauSel)} 
+              className={`w-full mt-6 py-3 bg-gradient-to-r from-cyan-400 to-blue-500 text-slate-950 font-bold rounded-xl transition-transform ${cargando ? 'opacity-50 cursor-not-allowed' : 'hover:scale-[1.02]'}`}
+            >
+              {cargando ? "..." : `📋 ${idioma === 'es' ? 'Generar Orden' : 'Place Order'}`}
             </button>
           </div>
         </div>
       </div>
 
-  {/* DETALLES DE TRANSFERENCIA */}
+      {/* DETALLES DE TRANSFERENCIA */}
       {ordenCompletada && (
         <div className="max-w-xl mx-auto mt-16 p-8 bg-slate-900 border border-dashed border-cyan-500 rounded-3xl text-slate-200 shadow-2xl">
           <h3 className="text-2xl font-bold text-cyan-400 mb-6 text-center">🎉 {idioma === 'es' ? '¡Orden Generada!' : 'Order Generated!'}</h3>
@@ -110,7 +121,7 @@ function Tienda({
           </button>
         </div>
       )}
-      </section>
+    </section>
   );
 }
 

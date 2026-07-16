@@ -21,15 +21,7 @@ function App() {
   const [mensajeUsuario, setMensajeUsuario] = useState('');
   const [estaMaullando, setEstaMaullando] = useState(false);
   const [calendarioAbierto, setCalendarioAbierto] = useState(false);
-  const [ordenCompletada, setOrdenCompletada] = useState(null);
 
-  const [colorClasica, setColorClasica] = useState('1');
-  const [tallaClasica, setTallaClasica] = useState('S');
-  const [colorMiauSel, setColorMiauSel] = useState('1');
-  const [tallaMiauSel, setTallaMiauSel] = useState('S');
-
-  const [indiceClasica, setIndiceClasica] = useState(0);
-  const [indiceMiau, setIndiceMiau] = useState(0);
 
   // Nombre de variable descriptivo en vez de 't'
   const traduccion = traducciones[idioma];
@@ -65,26 +57,6 @@ function App() {
     setMensajeUsuario('');
   };
 
-  const rotarClasica = () => setIndiceClasica((prev) => (prev === 3 ? 0 : prev + 1));
-  const rotarMiau = () => setIndiceMiau((prev) => (prev === 3 ? 0 : prev + 1));
-
-  const procesarOrden = (nombreProducto, precioPrenda, talla, color) => {
-    const numeroFolio = Math.floor(1000 + Math.random() * 9000);
-    const folioGenerado = `MAYO-${numeroFolio}`;
-    const costoEnvio = 200;
-    const totalCalculado = precioPrenda + costoEnvio;
-
-    setOrdenCompletada({
-      folio: folioGenerado,
-      producto: nombreProducto,
-      talla: talla,
-      color: color,
-      prenda: `$${precioPrenda} MXN`,
-      envio: `$${costoEnvio} MXN`,
-      total: `$${totalCalculado} MXN`
-    });
-  };
-
   return (
     <Router>
       <div className="App">
@@ -118,15 +90,7 @@ function App() {
             <Route path="/dieta" element={<Dieta traduccion={traduccion} />} />
             <Route path="/asesorias" element={<Asesorias traduccion={traduccion} setCalendarioAbierto={setCalendarioAbierto} />} />
             <Route path="/gatos" element={<CatGallery traduccion={traduccion} />} />
-            <Route path="/tienda" element={
-              <Tienda 
-                idioma={idioma} traduccion={traduccion} ordenCompletada={ordenCompletada} 
-                setOrdenCompletada={setOrdenCompletada} procesarOrden={procesarOrden}
-                colorClasica={colorClasica} setColorClasica={setColorClasica} tallaClasica={tallaClasica} setTallaClasica={setTallaClasica}
-                colorMiauSel={colorMiauSel} setColorMiauSel={setColorMiauSel} tallaMiauSel={tallaMiauSel} setTallaMiauSel={setTallaMiauSel}
-                indiceClasica={indiceClasica} rotarClasica={rotarClasica} indiceMiau={indiceMiau} rotarMiau={rotarMiau}
-              />
-            } />
+           <Route path="/tienda" element={<Tienda idioma={idioma} traduccion={traduccion} />} />
             <Route path="/contacto" element={
               <Contacto 
                 traduccion={traduccion} enviarMensaje={enviarMensaje} 
