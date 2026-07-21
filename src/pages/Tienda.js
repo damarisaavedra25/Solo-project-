@@ -1,5 +1,5 @@
 import React from 'react';
-import { fotosClasica, fotosMiau } from '../data';
+import { fotosClasica, fotosMiau } from '../data/data';
 import { useTienda } from '../hooks/useTienda';
 
 function Tienda({ idioma, traduccion: t }) {
